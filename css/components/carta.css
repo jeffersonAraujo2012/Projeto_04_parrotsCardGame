@@ -1,0 +1,47 @@
+.carta {
+  position: relative;
+  margin: 0 17px 34px;
+
+  height: 146px;
+  width: 117px;
+}
+
+.carta:hover {
+  cursor: pointer;
+}
+
+.face {
+  position: absolute;
+
+  border: 1px solid #99cea8;
+  border-radius: 5px;
+
+  height: 146px;
+  width: 117px;
+
+  transition: 0.5s;
+  transform-style: preserve-3d;
+
+  backface-visibility: hidden;
+}
+
+.carta .face.verso {
+  background-color: var(--cor-carta);
+  background-image: url("../../assets/images/back.png");
+  background-size: 100px 100px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.carta .face.frente {
+  background-color: var(--cor-carta);
+  transform: rotateY(180deg);
+}
+
+.carta:hover .face.verso {
+  transform: rotateY(-180deg);
+}
+
+.carta:hover .face.frente {
+  transform: rotateY(0deg);
+}
