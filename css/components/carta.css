@@ -10,6 +10,34 @@
   cursor: pointer;
 }
 
+.carta--0 .frente {
+  background-image: url("../../assets/images/tripletsparrot.gif");
+}
+
+.carta--1 .frente {
+  background-image: url("../../assets/images/bobrossparrot.gif");
+}
+
+.carta--2 .frente {
+  background-image: url("../../assets/images/explodyparrot.gif");
+}
+
+.carta--3 .frente {
+  background-image: url("../../assets/images/fiestaparrot.gif");
+}
+
+.carta--4 .frente {
+  background-image: url("../../assets/images/metalparrot.gif");
+}
+
+.carta--5 .frente {
+  background-image: url("../../assets/images/revertitparrot.gif");
+}
+
+.carta--6 .frente {
+  background-image: url("../../assets/images/unicornparrot.gif");
+}
+
 .face {
   position: absolute;
 
@@ -35,6 +63,9 @@
 
 .carta .face.frente {
   background-color: var(--cor-carta);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100px 100px;
   transform: rotateY(180deg);
 }
 
