@@ -69,10 +69,10 @@
   transform: rotateY(180deg);
 }
 
-.carta:hover .face.verso {
+.carta--virada .face.verso {
   transform: rotateY(-180deg);
 }
 
-.carta:hover .face.frente {
+.carta--virada .face.frente {
   transform: rotateY(0deg);
 }
