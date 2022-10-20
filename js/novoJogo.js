@@ -1,6 +1,8 @@
 import controladorClickNaCarta from "./gamePlay.js";
+import iniciarRelogio from "./relogio.js";
 
 let numeroDeCartas;
+let relogio;
 
 function getCartas() {
   const cartas = [];
@@ -55,7 +57,9 @@ function novoJogo() {
   let cartas = getCartas();
   cartas = embaralharCartas(cartas);
   distribuirCartas(cartas);
+
+  relogio = iniciarRelogio();
 }
 
 export default novoJogo;
-export { numeroDeCartas };
+export { numeroDeCartas, relogio};

@@ -1,0 +1,13 @@
+.relogio {
+  position: fixed;
+  top: 0;
+  right: 0;
+
+  padding: 5px 10px;
+  min-width: 60px;
+
+  color: white;
+  font-size: 2rem;
+  text-align: center;
+  background-color: darkslategray;
+}

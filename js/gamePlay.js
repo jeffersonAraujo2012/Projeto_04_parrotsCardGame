@@ -1,4 +1,4 @@
-import {numeroDeCartas} from "./novoJogo.js";
+import { numeroDeCartas, relogio } from "./novoJogo.js";
 
 let numViradas = 0,
   cartasViradas = [],
@@ -52,7 +52,10 @@ function controladorClickNaCarta(carta) {
 }
 
 function finalizarJogo() {
-  alert(`Você ganhou em ${numViradas} jogadas!`);
+  clearInterval(relogio);
+  let tempoDeJogo = document.querySelector(".relogio").innerHTML;
+
+  alert(`Você ganhou em ${tempoDeJogo} segundos com ${numViradas} jogadas!`);
 }
 
 export default controladorClickNaCarta;
