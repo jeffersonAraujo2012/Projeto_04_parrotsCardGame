@@ -58,6 +58,7 @@ function novoJogo() {
   cartas = embaralharCartas(cartas);
   distribuirCartas(cartas);
 
+  document.querySelector(".relogio").innerHTML = 0;
   relogio = iniciarRelogio();
 }
 

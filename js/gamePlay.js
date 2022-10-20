@@ -1,3 +1,4 @@
+import novoJogo from "./novoJogo.js";
 import { numeroDeCartas, relogio } from "./novoJogo.js";
 
 let numViradas = 0,
@@ -56,6 +57,22 @@ function finalizarJogo() {
   let tempoDeJogo = document.querySelector(".relogio").innerHTML;
 
   alert(`Você ganhou em ${tempoDeJogo} segundos com ${numViradas} jogadas!`);
+
+  let desejaReiniciar;
+  do {
+    desejaReiniciar = prompt("Deseja reiniciar a partida?");
+    if (desejaReiniciar === "sim") {
+      (numViradas = 0), (cartasViradas = []), (cartasViradasRodada = []);
+      novoJogo();
+    } else if (desejaReiniciar === "não") {
+      alert("Obrigado por jogar!");
+    } else {
+      alert(
+        "Você deve responder 'sim' ou 'não' em minúsculo com a acentuação correta"
+      );
+    }
+  } while (desejaReiniciar !== "sim" && desejaReiniciar !== "não");
 }
 
 export default controladorClickNaCarta;
+export { numViradas, cartasViradas, cartasViradasRodada };
