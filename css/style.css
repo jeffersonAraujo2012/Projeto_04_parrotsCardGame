@@ -23,6 +23,7 @@ header .titulo {
   font-size: 3.5rem;
   font-weight: 700;
   line-height: 4.06rem;
+  text-align: center;
 
   margin: 45px 0;
 }
@@ -34,4 +35,10 @@ header .titulo {
   flex-wrap: wrap;
 
   max-width: 918px;
+}
+
+@media (max-width: 414px) {
+  html {
+    font-size: 10px;
+  }
 }
