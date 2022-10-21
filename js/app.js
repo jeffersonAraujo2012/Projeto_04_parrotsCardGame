@@ -1,3 +1,5 @@
-import novoJogo from "./novoJogo.js";
+import {Jogo as Jogo} from "./Jogo.js";
 
-novoJogo();
+//novoJogo();
+let jogo = new Jogo();
+jogo.iniciar();
