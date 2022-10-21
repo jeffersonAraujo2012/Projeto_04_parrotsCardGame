@@ -2,7 +2,7 @@ export class Carta {
   nodeElement;
   _virada = false;
   _varJogo;
-  _jogo
+  _jogo;
 
   constructor(tipo, jogo) {
     this._varJogo = jogo.varJogo;
@@ -15,7 +15,8 @@ export class Carta {
       <div class="face verso"></div>
     `;
 
-    this.nodeElement.onclick = (e) => this._controladorClickNaCarta(e.currentTarget);
+    this.nodeElement.onclick = (e) =>
+      this._controladorClickNaCarta(e.currentTarget);
   }
 
   _virarCarta() {
@@ -28,7 +29,7 @@ export class Carta {
     this._varJogo.numViradas++;
     console.log(this._varJogo.numViradas);
   }
-  
+
   _desvirarCartasRodada() {
     //Este if abaixo existe apenas para resolver um bug
     if (this._varJogo.segundaCarta) {
@@ -38,17 +39,17 @@ export class Carta {
       this._varJogo.segundaCarta = null;
     }
   }
-  
+
   _controladorClickNaCarta(carta) {
     //Verifica se a carta clicada está virada
     let ehVirada = carta.classList.contains("carta--virada");
-  
+
     /*Se a quantidade de carta virada for menor que 2 e a carta 
       clicada não tiver sido virada: vira-se a carta*/
     if (!this._varJogo.segundaCarta && !ehVirada) {
       this._virarCarta(carta);
     }
-  
+
     //Quando o jogador virar duas cartas...
     if (this._varJogo.primeiraCarta && this._varJogo.segundaCarta) {
       //...verifica-se se elas são iguais.
@@ -57,7 +58,11 @@ export class Carta {
         this._varJogo.primeiraCarta = null;
         this._varJogo.segundaCarta = null;
         this._varJogo.cartasViradas += 2;
-        if (this._varJogo.cartasViradas == this._varJogo.numeroDeCartas) this._jogo.finalizar();
+        if (this._varJogo.cartasViradas == this._varJogo.numeroDeCartas) {
+          //Este timeout resolve um bug de alguns dispositivos onde a ultima carta não virava visualmente
+          setTimeout(this.finalizar, 500);
+          this._jogo.finalizar();
+        }
       } else {
         //Senão após 1000ms = 1s as cartas da lista são desviradas
         setTimeout(() => {

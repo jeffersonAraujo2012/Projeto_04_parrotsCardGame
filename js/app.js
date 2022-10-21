@@ -1,5 +1,5 @@
 import {Jogo as Jogo} from "./Jogo.js";
 
-//novoJogo();
+//Você não deve instaciar mais de um objeto do tipo Jogo
 let jogo = new Jogo();
 jogo.iniciar();

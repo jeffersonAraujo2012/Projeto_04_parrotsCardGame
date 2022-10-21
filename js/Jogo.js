@@ -37,7 +37,7 @@ export class Jogo {
     });
   }
 
-  resetar() {
+  _resetar() {
     this._cartas = [];
     this._cronometro;
     this.varJogo = {
@@ -50,7 +50,9 @@ export class Jogo {
 
   iniciar() {
     do {
-      this.varJogo.numeroDeCartas = prompt("Com quantas cartas quer jogar?");
+      this.varJogo.numeroDeCartas = prompt(
+        "Com quantas cartas quer jogar? Escolha entre 4 e 14 cartas."
+      );
     } while (
       this.varJogo.numeroDeCartas < 4 ||
       this.varJogo.numeroDeCartas > 14 ||
@@ -76,7 +78,7 @@ export class Jogo {
     do {
       desejaReiniciar = prompt("Deseja reiniciar a partida?");
       if (desejaReiniciar === "sim") {
-        this.resetar();
+        this._resetar();
         this.iniciar();
       } else if (desejaReiniciar === "não") {
         alert("Obrigado por jogar!");
