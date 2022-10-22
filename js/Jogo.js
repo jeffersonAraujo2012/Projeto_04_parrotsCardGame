@@ -3,7 +3,6 @@ import { Cronometro as Cronometro } from "./Cronometro.js";
 
 export class Jogo {
   _cartas = [];
-  _cronometro;
   varJogo = {
     primeiraCarta: null,
     segundaCarta: null,
@@ -39,7 +38,6 @@ export class Jogo {
 
   _resetar() {
     this._cartas = [];
-    this._cronometro;
     this.varJogo = {
       primeiraCarta: null,
       segundaCarta: null,
@@ -64,7 +62,7 @@ export class Jogo {
     this._distribuirCartas();
 
     this.status = "Em andamento";
-    this._cronometro = Cronometro.iniciar();
+    Cronometro.iniciar();
   }
 
   finalizar() {

@@ -1,6 +1,5 @@
 export class Carta {
   nodeElement;
-  _virada = false;
   _varJogo;
   _jogo;
 
@@ -44,8 +43,7 @@ export class Carta {
     //Verifica se a carta clicada está virada
     let ehVirada = carta.classList.contains("carta--virada");
 
-    /*Se a quantidade de carta virada for menor que 2 e a carta 
-      clicada não tiver sido virada: vira-se a carta*/
+    //Só vira-se uma carta se ainda tiver cartas a serem viradas na rodada e se ela não tiver sido virada
     if (!this._varJogo.segundaCarta && !ehVirada) {
       this._virarCarta(carta);
     }

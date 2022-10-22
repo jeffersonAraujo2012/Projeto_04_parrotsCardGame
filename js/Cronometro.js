@@ -18,6 +18,4 @@ export class Cronometro {
     }
     return this.tempoAtual;
   }
-
-
 }
