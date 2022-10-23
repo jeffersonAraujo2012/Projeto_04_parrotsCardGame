@@ -58,8 +58,8 @@ export class Carta {
         this._varJogo.cartasViradas += 2;
         if (this._varJogo.cartasViradas == this._varJogo.numeroDeCartas) {
           //Este timeout resolve um bug de alguns dispositivos onde a ultima carta não virava visualmente
-          setTimeout(this.finalizar, 500);
-          this._jogo.finalizar();
+          setTimeout(() => this._jogo.finalizar(), 500);
+          //this._jogo.finalizar();
         }
       } else {
         //Senão após 1000ms = 1s as cartas da lista são desviradas
